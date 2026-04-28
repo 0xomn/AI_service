@@ -22,12 +22,12 @@ def bce_dice_loss(y_true, y_pred):
 
 # ===== models =====
 classification_model = tf.keras.models.load_model(
-    "models/classification.keras",
+    "./classification.keras",
     compile=False
 )
 
 segmentation_model = tf.keras.models.load_model(
-    "models/segmentation.keras",
+    "./segmentation.keras",
     custom_objects={
         "dice_coef": dice_coef,
         "dice_loss": dice_loss,
